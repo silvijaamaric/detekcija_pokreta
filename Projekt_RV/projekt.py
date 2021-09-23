@@ -16,6 +16,10 @@ while cap.isOpened():
        print(ret)
        ret, frame2 = cap.read()
        print(ret)
+       
+       if ret == False:
+             print(ret)
+             break
 
        # Razlika između okvira1 (slika) i okvira2 (slika)
        diff = cv2.absdiff(frame1, frame2)
@@ -55,9 +59,7 @@ while cap.isOpened():
        # Pritisnite 'esc' za izlaz 
        if cv2.waitKey(40) == 27:
               break
-       if ret == False:
-             print(ret)
-             break
+
 # Otpustite resurs ograničenja
 cap.release()
 
